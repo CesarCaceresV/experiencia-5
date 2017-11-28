@@ -1,0 +1,46 @@
+<div class="contailer">
+        <table class="table table-striped">
+                <thead>
+                  <tr>
+                    <th>Nombre </th>
+                    <th>Apellido </th>
+                    <th>Edad</th>
+                    <th>Promedio Actual</th>
+                    <th>Estado</th>
+                </tr>
+                </thead>
+                <tbody>
+                    <% for(var i=0; i<listaestudiantes.length; i++) { %>
+                        <tr>
+                            <td>
+                                <%=listaestudiantes[i].nombreestudiante%>
+                            </td>
+                            <td>
+                                <%=listaestudiantes[i].apellidoestudiante%>
+                            </td>
+                            <td>
+                                <%=listaestudiantes[i].edadestudiante%>
+                            </td>
+                            <td>
+                                <%=listaestudiantes[i].promedioestudiante%>
+                            </td>
+                            <td onload="aprobadoreprobado(listaestudiantes[i].promedioestudiante)" id="estado"> </td>
+                            
+                        </tr>    
+                    <% } %>
+                </tbody>
+              </table>
+              <script>
+                function aprobadoreprobado(k) {
+                    if(k < 4){
+                        return "reprobado";
+                    }else{
+                        return "aprobado";
+                    }
+                }
+            </script>
+              <a class="btn btn-success" href="/Agregar">
+                Agregar Estudiante
+                <i class="glyphicon glyphicon-menu-right"></i>
+            </a>         
+</div>
